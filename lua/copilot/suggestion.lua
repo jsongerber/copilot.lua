@@ -320,11 +320,11 @@ local function handle_trigger_request(err, data)
   update_preview()
 end
 
-local function trigger(bufnr, timer)
+local function trigger(bufnr, _)
   local _timer = copilot._copilot_timer
   copilot._copilot_timer = nil
 
-  if bufnr ~= vim.api.nvim_get_current_buf() or timer ~= _timer or vim.fn.mode() ~= "i" then
+  if bufnr ~= vim.api.nvim_get_current_buf() or nil ~= _timer or vim.fn.mode() ~= "i" then
     return
   end
 
